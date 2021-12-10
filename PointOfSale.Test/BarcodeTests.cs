@@ -11,10 +11,8 @@ namespace PointOfSale.Test
         public void Barcode12345display725dollars()
         {
             Barcode barcode = new Barcode("12345");
-
-            barcode.Scan();
             
-            barcode.Should().Be("$7.25");
+            barcode.Scan().Should().Be("$7.25");
         }
     }
 }

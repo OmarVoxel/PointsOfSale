@@ -9,9 +9,13 @@ namespace PointsOfSale
         public Barcode(string barcode)
             => _barcode = barcode;
         
-        public void Scan()
+        public string Scan()
         {
-            
+            if (_barcode == "12345")
+                return "$7.25";
+
+            return "";
+
         }
     }
 }
