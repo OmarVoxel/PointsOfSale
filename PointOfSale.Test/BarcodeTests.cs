@@ -41,5 +41,13 @@ namespace PointOfSale.Test
             barcode.Scan().Should().Be("Error: empty barcode");
         }
 
+        
+        [Fact]
+        public void TotalDisplayTheSumOfMultiplesBarcodes()
+        {
+            Barcode barcode = new Barcode(new string[] {"12345", "23456"} );
+            
+            barcode.Total().Should().Be("$19.75");
+        }
     }
 }
