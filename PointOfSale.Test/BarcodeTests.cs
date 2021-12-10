@@ -23,5 +23,14 @@ namespace PointOfSale.Test
             
             barcode.Scan().Should().Be("$12.50");
         }
+        
+        [Fact]
+        public void Barcode99999displayErrorBarcodeNotFound()
+        {
+            Barcode barcode = new Barcode("99999");
+            
+            barcode.Scan().Should().Be("Error: barcode not found");
+        }
+
     }
 }

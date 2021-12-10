@@ -17,7 +17,8 @@ namespace PointsOfSale
             if (_barcode == "23456")
                 return "$12.50";
 
-                    
+            
+            
             return "";
 
         }
