@@ -20,9 +20,7 @@ namespace PointsOfSale
             if (_barcode == "99999")
                 return "Error: barcode not found";
             
-            
-            return "";
-
+            return "Error: empty barcode";
         }
     }
 }
