@@ -45,7 +45,7 @@ namespace PointOfSale.Test
         [Fact]
         public void TotalDisplayTheSumOfMultiplesBarcodes()
         {
-            Barcode barcode = new Barcode(new string[] {"12345", "23456"} );
+            Barcode barcode = new Barcode(new string[] {"12345", "23456", "99999"} );
             
             barcode.Total().Should().Be("$19.75");
         }

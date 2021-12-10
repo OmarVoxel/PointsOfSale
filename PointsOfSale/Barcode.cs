@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace PointsOfSale
@@ -23,7 +22,10 @@ namespace PointsOfSale
         public string Scan()
             => _barcode != "" ? _barcodeDict[_barcode] : "Error: empty barcode";
         
-        public string Total()
-            => $"${ _barcodes.Sum(b => double.Parse(_barcodeDict[b][1..])) }";
+        public string Total() 
+            => "$" + _barcodes.Sum(b => {
+                double.TryParse(_barcodeDict[b][1..], out var result);
+                return result;
+            });
     }
 }
