@@ -32,5 +32,14 @@ namespace PointOfSale.Test
             barcode.Scan().Should().Be("Error: barcode not found");
         }
 
+        
+        [Fact]
+        public void EmptyBarcodeDisplayErrorEmptyBarcode()
+        {
+            Barcode barcode = new Barcode("");
+            
+            barcode.Scan().Should().Be("Error: empty barcode");
+        }
+
     }
 }
